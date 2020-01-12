@@ -1,0 +1,14 @@
+Command for editing the file
+delete  line:dd
+multiple line delete: 3dd will delete the three li9ne
+dw: for deleting the word
+copy a line :yy
+copy the multiple line :3yy
+Pasting a line is :p
+Copy a word is : yw
+pasting a word is word:p
+replace is : r and R 
+for single character replace use smalln r
+for continuous replace untill finished Is R and then press esc.
+CTRL +R for undo.
+or use u for undo operation.
