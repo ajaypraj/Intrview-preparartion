@@ -156,3 +156,57 @@ def myWrapper(n):
 mulFive = myWrapper(5)
 print(mulFive(2))    # output => 10
 
+18. How do you copy an object in Python?
+In Python, the assignment statement (= operator) does not copy objects. 
+Instead, it creates a binding between the existing object and the target variable name.
+Shallow Copy is a bit-wise copy of an object. The copied object created has an exact copy of the values in the original object.
+If either of the values is a reference to other objects,
+just the reference addresses for the same are copied.
+
+Deep Copy copies all values recursively from source to target object, i.e. 
+it even duplicates the objects referenced by the source object.
+from copy import copy, deepcopy
+list_1 = [1, 2, [3, 5], 4]
+## shallow copy
+list_2 = copy(list_1) 
+list_2[3] = 7
+list_2[2].append(6)
+list_2    # output => [1, 2, [3, 5, 6], 7]
+list_1    # output => [1, 2, [3, 5, 6], 4]
+## deep copy
+list_3 = deepcopy(list_1)
+list_3[3] = 8
+list_3[2].append(7)
+list_3    # output => [1, 2, [3, 5, 6, 7], 8]
+list_1    # output => [1, 2, [3, 5, 6], 4]
+
+19 What is the difference between xrange and range in Python?
+Note: xrange has been deprecated as of Python 3.x. Now range does exactly the same as what xrange used to do in Python 2.x,
+since it was way better to use xrange() than the original range() function in Python 2.x
+20. What is pickling and unpickling?
+Pickling is the name of the serialization process in Python.
+Any object in Python can be serialized into a byte stream and dumped as a file in the memory.
+The function used for the above process is pickle.dump().
+
+Unpickling is the complete inverse of pickling.
+It deserializes the byte stream to recreate the objects stored in the file and loads the object to memory.
+
+21. What are generators ? 
+Generator are similar to function but they use yied keyword instead of return. They return iterables which is collection of objects.
+They return items one at time.
+def fib(n):
+   p, q = 0, 1
+   while(p < n):
+       yield p
+       p, q = q, p + q
+x = fib(10) 
+
+def range_function(n):
+    x=0
+    while(x<n):
+        yield x
+        x=x+1
+for i in range_function(10):
+    print(i)
+
+
