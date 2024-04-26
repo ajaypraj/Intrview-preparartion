@@ -1,0 +1,14 @@
+company : EY
+1. Shallow copy and deep copy
+2. OOps 4 property
+3. Odd and even calculation of given list
+4. Second largest element in list
+5. Print the below pattern 
+"""
+     0 1 2  
+0    1       
+1    2 3      
+2    4 5 6
+3    7 8
+4    9
+"""
