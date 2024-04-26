@@ -1,0 +1,94 @@
+1. What do you know about pandas?
+Pandas is an open-source, python-based library used in data manipulation applications requiring high performance.
+The name is derived from “Panel Data” having multidimensional data. 
+This was developed in 2008 by Wes McKinney and was developed for data analysis.
+Pandas are useful in performing 5 major steps of data analysis - Load the data, clean/manipulate it, prepare it, model it, and analyze the data.
+
+2. Define pandas dataframe.
+A dataframe is a 2D mutable and tabular structure for representing data labelled with axes - rows and columns.
+The syntax for creating dataframe:
+
+import pandas as pd
+dataframe = pd.DataFrame( data, index, columns, dtype)
+where:
+
+data - Represents various forms like series, map, ndarray, lists, dict etc.
+index - Optional argument that represents an index to row labels.
+columns - Optional argument for column labels.
+Dtype - the data type of each column. Again optiona
+
+3. How will you combine different pandas dataframes?
+append() method: This is used to stack the dataframes horizontally. Syntax:
+df1.append(df2)
+import pandas as pd
+
+df1=pd.DataFrame([1,2,3,4,5],columns=['A'])
+df2=pd.DataFrame([10,20,30,40,50],columns=['A'])
+
+print(df1)
+print(df2)
+df1=df1.append(df2)
+
+print(df1)
+
+"""
+   A
+0  1
+1  2
+2  3
+3  4
+4  5
+    A
+0  10
+1  20
+2  30
+3  40
+4  50
+    A
+0   1
+1   2
+2   3
+3   4
+4   5
+0  10
+1  20
+2  30
+3  40
+4  50
+"""
+
+import pandas as pd
+
+df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
+
+result = df1.append(df2)
+print(result)
+
+result = pd.concat([df1, df2])
+print(result)
+
+"""
+   A  B
+0  1  3
+1  2  4
+0  5  7
+1  6  8
+==========
+   A  B
+0  1  3
+1  2  4
+0  5  7
+1  6  8
+"""
+4. Can you create a series from the dictionary object in pandas?
+import pandas as pd    
+dict_info = {'key1' : 2.0, 'key2' : 3.1, 'key3' : 2.2}  
+series_obj = pd.Series(dict_info)    
+print (series_obj)    
+Output:
+x     2.0
+y     3.1
+z     2.2
+dtype: float64
+
