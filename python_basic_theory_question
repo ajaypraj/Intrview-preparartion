@@ -209,4 +209,117 @@ def range_function(n):
 for i in range_function(10):
     print(i)
 
+22.  What is the use of help() and dir() functions?
+>>> import math
+>>> dir(math)
+['__doc__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'exp2', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi',
+'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'sumprod', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+>>> help(math)
+Help on built-in module math:                                                                                                                      
+NAME
+    math
+DESCRIPTION
+    This module provides access to the mathematical functions
+    defined by the C standard.
+FUNCTIONS
+    acos(x, /)
+        Return the arc cosine (measured in radians) of x.
+        The result is between 0 and pi.
+    acosh(x, /)
+        Return the inverse hyperbolic cosine of x.
 
+23. How python code is interpreted?
+Lexical Analysis:
+The Python interpreter first performs lexical analysis, where it breaks down the source code into a sequence of tokens.
+Parsing:
+After lexical analysis, the interpreter parses the tokens into a parse tree or abstract syntax tree (AST).
+
+Intermediate Code Generation (optional):
+Some Python implementations, like CPython (the default and most widely used implementation), generate intermediate bytecode from the parse tree. 
+This bytecode is a low-level representation of the Python code and is executed by the Python Virtual Machine (PVM).
+
+Bytecode Execution:
+The bytecode is executed by the Python Virtual Machine. 
+The PVM translates the bytecode into machine code and executes it on the underlying hardware.
+
+24. What are iterators in Python?
+
+An iterator is an object.
+It remembers its state i.e., where it is during iteration (see code below to see how)
+__iter__() method initializes an iterator.
+It has a __next__() method which returns the next item in iteration and points to the next element. 
+Upon reaching the end of iterable object __next__() must return StopIteration exception.
+It is also self-iterable.
+Iterators are objects with which we can iterate over iterable objects like lists, strings, etc.
+class ArrayList:
+   def __init__(self, number_list):
+       self.numbers = number_list
+   def __iter__(self):
+       self.pos = 0
+       return self
+   def __next__(self):
+       if(self.pos < len(self.numbers)):
+           self.pos += 1
+           return self.numbers[self.pos - 1]
+       else:
+           raise StopIteration
+array_obj = ArrayList([1, 2, 3])
+it = iter(array_obj)
+print(next(it)) #output: 2
+print(next(it)) #output: 3
+print(next(it))
+
+class MyIterator:
+    def __init__(self, max_value):
+        self.max_value = max_value
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.max_value:
+            self.current += 1
+            return self.current
+        else:
+            raise StopIteration
+
+# Using the custom iterator
+iterator = MyIterator(5)
+for value in iterator:
+    print(value)
+
+
+25.  Explain how to delete a file in Python?
+import os
+os.remove("ChangedFile.csv")
+print("File Removed!")
+
+26. Explain split() and join() functions in Python?
+string = "This is a string."
+string_list = string.split(' ') #delimiter is ‘space’ character or ‘ ‘
+print(string_list) #output: ['This', 'is', 'a', 'string.']
+print(' '.join(string_list)) #output: This is a string.
+
+27. What does *args and **kwargs mean?
+argv--> will be tuple
+
+def multiply(a, b, *argv):
+   mul = a * b
+   for num in argv:
+       mul *= num
+   return mul
+print(multiply(1, 2, 3, 4, 5))
+
+def tellArguments(**kwargs):
+   for key, value in kwargs.items():
+       print(key + ": " + value)
+tellArguments(arg1 = "argument 1", arg2 = "argument 2", arg3 = "argument 3")
+
+28 What are negative indexes and why are they used?
+Negative indexes are the indexes from the end of the list or tuple or string.
+arr = [1, 2, 3, 4, 5, 6]
+#get the last element
+print(arr[-1]) #output 6
+#get the second last element
+print(arr[-2]) #output 5
