@@ -173,5 +173,115 @@ The Override modifier is useful for overriding a base class function inside the 
 This is done by using a method called issubclass() provided by python.
 The method tells us if any class is a child of another class by returning true or false accordingly.
 
+7. What is the purpose of the @property decorator?
+In Python, the property decorator is a built-in function used to define properties of a class. 
+It allows you to define methods that act like attributes,
+providing control over how attributes are accessed, assigned, and deleted
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        if value <= 0:
+            raise ValueError("Radius must be positive")
+        self._radius = value
+
+    @radius.deleter
+    def radius(self):
+        del self._radius
+
+# Usage
+c = Circle(5)
+print(c.radius)  # Output: 5
+c.radius = 7
+print(c.radius)  # Output: 7
+del c.radius
+# Raises AttributeError: 'Circle' object has no attribute '_radius'
+
+8. What is a static method and how is it different from a class method?
+A static method in Python belongs to a class rather than an instance of the class.
+You can define it using the @staticmethod decorator. It doesn’t require reference to the class or its instance and can be called on the class itself.
+Unlike regular instance methods, it doesn’t take a self parameter. 
+
+
+A static method in Python is a method that is bound to a class rather than an instance of the class. This means you can call a static method without creating an instance of the class. Static methods are defined using the @staticmethod decorator.
+
+Here's a simple example to illustrate how static methods are used:
+
+python
+Copy code
+class MathOperations:
+    @staticmethod
+    def add(x, y):
+        return x + y
+    
+    @staticmethod
+    def subtract(x, y):
+        return x - y
+
+# Usage
+print(MathOperations.add(5, 3))  # Output: 8
+print(MathOperations.subtract(5, 3))  # Output: 2
+
+
+9.  How can you prevent method overriding in Python?
+Pefixing the method’s name with a double underscore (__), 
+you make it private to the class, and it cannot be overridden in a subclass. 
+
+10. How does polymorphism work in Python?
+Method Overriding:
+Operator Overloading
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+# Usage
+p1 = Point(1, 2)
+p2 = Point(3, 4)
+p3 = p1 + p2
+print(f"({p3.x}, {p3.y})")  # Output: (4, 6)
+
+11 . Does Python supports method overloading??
+Python does not support method overloading in the traditional sense as some other languages like Java or C++ do, 
+where you can define multiple methods with the same name but with different parameter lists.
+
+In Python, you can define a function or method with a single name, and if you try to define another function or method with the same name in the same scope,
+the newer definition will override the previous one.
+
+
+However, Python provides a way to simulate method overloading using default 
+parameter values and variable-length argument lists.
+class MathOperations:
+    def add(self, x, y=None):
+        if y is None:
+            return x
+        else:
+            return x + y
+
+# Usage
+math_ops = MathOperations()
+print(math_ops.add(2, 3))  # Output: 5
+print(math_ops.add(2))      # Output: 2
+In this example, the add() method can accept one or two arguments.
+If only one argument is passed, it returns that argument. If two arguments are passed,
+it returns the sum of the two arguments. This is a way to achieve method overloading-like behavior in Python, 
+although it's not exactly the same as method overloading in languages like Java or C++.
+
+
+
+
+
+
+
 
 
