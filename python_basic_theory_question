@@ -323,3 +323,42 @@ arr = [1, 2, 3, 4, 5, 6]
 print(arr[-1]) #output 6
 #get the second last element
 print(arr[-2]) #output 5
+
+29 .  Difference between tuple and list.
+tuple is immutable object list is mutable
+iteration is fast is tuple
+less memory consumption in tuple
+since array we can add element then its size is more .
+
+some of the operation not supported by tuple
+-->append
+--> remove
+--> extend
+-->insert
+An object is hashable if it has a hash value which never changes during its lifetime .
+Hashability makes an object usable as a dictionary key and a set member, because these data structures use the hash value internally.
+Most of Python’s immutable built-in objects are hashable; mutable containers (such as lists or dictionaries) are not; immutable containers 
+(such as tuples and frozensets) are only hashable if their elements are hashable. 
+
+30. In terms of efficiency why are tuples better?
+Since it is non-mutable, elements cant grow beyond a fixed size, hence memory allocation doesn’t
+31. Write a simple list and tuple variable.
+A] mylist=[1,2,3,4]
+B] myt1=(mylist,1)
+32] Here, in point 3], B] point, can we perform append operation,remove operation i.e mutable
+operations to index[0]?
+A] Yes its possible, because it tuple holds mutable containers such as list and dictionary then it become unhasable. 
+
+33)  Write a decorator which doesn’t affect the return function of parent module.
+A] eg:- mention/write code with @classmethod or @staticmethod since those doesn’t affect the
+return type of a method.
+def decor(f):
+    def inner(x,y):
+        res=f(x,y)
+        return res
+    return inner
+@decor
+def add(x,y):
+    return x+y        
+r=add(10,20)
+print(r)
