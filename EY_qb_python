@@ -1,0 +1,76 @@
+Questions asked by client with regard to Python.
+
+1] Difference between tuple and list.
+A] Tuples are immutable and list are mutable.
+2] In terms of efficiency why are tuples better?
+A] Since it is non-mutable, elements cant grow beyond a fixed size, hence memory allocation doesn’t
+anticipate for it grow, hence its better than list.
+3] Write a simple list and tuple variable.
+A] mylist=[1,2,3,4]
+B] myt1=(mylist,1)
+4] Here, in point 3], B] point, can we perform append operation,remove operation i.e mutable
+operations to index[0]?
+A] Yes its possible, be more elaborate while explaining it. Since tuple allows hetero data structure to
+be present within its set, here we have list which is mutable, hence possible to do so.
+5] Write a decorator which doesn’t affect the return function of parent module.
+A] eg:- mention/write code with @classmethod or @staticmethod since those doesn’t affect the
+return type of a method.
+6] Write the below code, say what would be the output of the execution?
+( write a code which takes optional parameter), then questions followed over it.
+i) Write a function that accepts a variable and keyword parameters which accepts empty list.
+def myfunc(val,mylist=[]):
+mylist.append()
+return mylist.append(val)
+what will be the output of the following:-
+myfunc(2) # what it will return-&gt; it will return 2, why?
+myfunc(3) # what it will return-&gt; [2,3],why?
+myfunc(4) #what it will return-&gt; [2,3,4],why?
+Why, explain the reason?-&gt; 1] since list is created in the function, it retains it over the period until
+and is not released.
+
+7] Check for balanced parentheses in Python - GeeksforGeeks( here it was asked for generic solution
+to the problem stmt)
+
+8) what is dictionary? Explain the concept. And write a code as below for dictionary
+mydict={“one”:1,”two”:2,”three”:3,”four”:4}.
+Now sort it based on values in one liner.
+Use sorted.
+A] sorted(mydict.items(),key=lambda item:item[1])
+B] How to reverse sort it?
+sorted(mydict.items(),key=lambda item:item[1],reverse=True)
+9) how to use a dictionary comprehension to a code?
+A] write a code in dictionary comph and explain what is it.
+10] What are generators and iterators?
+A] Generators uses yield keyword to store the variable in persistence since no complete block of
+memory is allocated to the complete list, on contrary for iterators, we have to use iter keyword
+which internally uses dunder method __iter__ to generate a lists
+11] Write a code to exhibit how to use generators? Sample code is enough
+def myfunc():
+yield stmt
+
+for value in myfunc():
+print(value)
+12] Whether all generators are iterators or whether all iterators are generators? Which is true?
+A] All generators are iterators and not the other way around.
+13] What does __name==”___main__” represent?
+A] It represent dunder method of namespace wherein its value is equal to main constructor,
+whenever objects are called first.
+14] Write a code to represent a generator with next()?
+
+Day2:-
+1] what will be the output:-
+a=2
+b=”3”
+what will happen to a+b-&gt; here it will give error
+what will happen when we convert it to int?
+
+2+int(“3”)= 5
+And why? Explain it with dunder method of __add__
+
+2] sql questions-&gt; sort the employee salary dept wise and give out only top2 based on salaries?
+Use :- top(2) group by order by
+3] df1 has 3 cols :- “cola”,”colb”,”colc”,”cold”
+Df2 has 4 cols:- “m”,”colb”,”colc”,”cold”
+How to combine two dataframes into one without merge,join,concat?
+4] Project q’s were asked in detail.?Why BDD?
+5] pandas melt, pivot and transform questions.
