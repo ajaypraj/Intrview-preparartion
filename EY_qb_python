@@ -74,3 +74,286 @@ Df2 has 4 cols:- “m”,”colb”,”colc”,”cold”
 How to combine two dataframes into one without merge,join,concat?
 4] Project q’s were asked in detail.?Why BDD?
 5] pandas melt, pivot and transform questions.
+==================================================JAVA Questions asked in Python==============
+
+Shruti Gupta <Shruti.Gupta19@in.ey.com>
+8:00 PM (52 minutes ago)
+to Mansi, dipti@jobline.in, mahima
+
+HI ,
+
+ 
+
+1. DB isolation layers
+
+2. There are thress tables Emp table having, eid, ename, salary fields, And Depttable having did, dname fields
+
+And EmployeeDept table having empid, deptid, one to many relationships 
+
+Write a query to get dept name who is paying max salary in those corresponding department.
+
+3. What types of locking is supported in DB
+
+4. Java scenario: there is a shared account and shared across 2 people,, having tables account and balance..
+
+2 java process,/2 users are trying to withdraw amount in different JVM altogether,, how to handle, overriden data,, data is incorrect,, how to resolve this problem!? - data inconsistency
+
+5.How to handle across different datasource?
+
+6.  How does transactions co ordinate with each other if they are one single object in multiple datasource
+
+7.How to Create employee method having personal data and sensisitve data, having their own datasource,
+
+If one fails, other should fail. How to manage transaction here!? 
+
+8. In postmapping, how to pass json object of employee, and how it is converted to java object
+
+9. How to throw exception and throw to custom exceptions code
+
+10. Who is providing @Service annotations - package name
+
+11. At which level, exceptions are introduced in the code
+
+12. What is the need to create repository as interface
+
+13. Java code for simple Restful service for employee management,, performing CRUD operations
+
+14. For Microservices, do we need separate database store
+
+15. How to convert monolithic to microservice applications
+
+16. Is it mandatory for a Microservices to restful services 
+
+17. Java difference between Microservices and restful services
+
+ 
+
+Set - 2
+
+OOPS concept
+
+and how have you used them in your project?
+
+ 
+
+Optional classes
+
+ 
+
+hashmap internalworking
+
+ 
+
+Multiple inheritance
+
+ 
+
+New features in java 8
+
+ 
+
+Different annotations you used in your project
+
+ 
+
+How are you calling one service to another?
+
+ 
+
+Multiple inheritance
+
+ 
+
+Reverse a string
+
+ 
+
+@Qualifier and @Primary
+
+ 
+
+Multithreading
+
+ 
+
+Architecture of your applications
+
+What all rest endpoints you have used
+
+What all design patterns have you applied
+
+What kind of security you are using in your application
+
+Set -3
+
+coding related to multi threads
+
+coding - sets should be in decreasing order in the map
+
+Kafka questions- partiton topics
+
+related to J unit .
+
+hashmaps
+
+Difference b/t concorrent hashmap and hashmap.
+
+array list is thread safe or not 
+
+Set - 4
+
+They will ask scenarios after your project explanation
+
+Multithreading concepts
+
+How Lock will work.
+
+Write program for sort the key using map
+
+Singleton class with code example
+
+Use of microscope and why
+
+Oops concepts
+
+Interface
+
+What is saga pattern how it will work
+
+Design patterns
+
+Garbage collection
+
+Try catch and finally block with code example
+
+How to index the data in database
+
+Set - 5
+
+1.vector vs arraylist
+
+2. hasmap vs concurrenthasmap
+
+3. ⁠internal working of hashmap
+
+4. ⁠collision in hashmap
+
+5. ⁠design patterns
+
+6. ⁠singleton and it’s related questions
+
+7. ⁠sort a map on its values
+
+8. ⁠memory in java
+
+9. ⁠minor GC major GC
+
+10. ⁠ types of class loader
+
+11.  dependency injection
+
+12. ⁠@autoconfiguration
+
+13. ⁠@autowire
+
+14. ⁠Factoryclass in spring boot
+
+ 
+
+Set - 1
+
+Programs :
+
+1. shuffle array such that all positive numbers should be in the left side and all -ve numbers should be in right side
+
+2. find the next series of largest numbers of given number . e.g. n = 3547102, OP: 3547120, 3547201,3547210 ...
+
+3. Interchange the two strings without using extra variables or temporary variable
+
+
+
+Java:
+
+
+
+1. Exception Handling
+
+- try catch finally block definition
+
+- variations of try/catch/finally
+
+- checked and unchecked Exceptions, types of these exceptions, examples
+
+- order of exception to be set while writing code (best practices)
+
+
+
+2. OOPs
+
+- Object class methods
+
+- String vs StringBuilder vs StringBuffer
+
+- Why String is immutable
+
+- is String class thread safe ? yes how, no why
+
+- hashCode() and equals() of Object class (working)
+
+- what if only hashCode() overrides
+
+- what is the return type of hashCode()
+
+- design hashCode for string values
+
+- Static keyword
+
+- where static keyword can be applied (class, method, variable and static block)
+
+- when static block will execute. which one will execute first static block or constructor
+
+- design Anonymous inner class and importance
+
+- HashTable vs HashMap
+
+- How to synchronize HashMap (Collection.synchronize() and ConcurrentHashMap)
+
+- Working of HashMap put and get method
+
+
+
+3. Database
+
+- No Questions
+
+
+Hiring for purely backend work. TechStack : Scala, Apache Spark and Apache
+Hive for BigData Module
+
+Set-2
+
+1- find power of number
+
+2- write sql from a table where colour is coming twice
+
+Set -3
+
+Mostly asked on data structures and multi-threading questions
+
+Can we convert stack to queues and viceversa.
+
+What is volatile, synchronization
+
+Serialization
+
+Oops concepts
+
+Immutability
+
+Memory allocation questions
+
+Some questions on collections, internal implementation of hashmap
+
+Different types of hashing techniques and maps are available.
+
+And some programming questions
