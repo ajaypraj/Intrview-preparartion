@@ -362,3 +362,43 @@ def add(x,y):
     return x+y        
 r=add(10,20)
 print(r)
+
+34)what is @classmethod decorator and @staticmethod decorator?
+Ans: @classmethod: This decorator is used to define a method that operates on the class itself rather
+than on instances of the class. The method receives the class itself as its first argumentconventionally named cls, 
+instead of the instance. 
+class MyClass:
+    class_variable = "Hello"
+
+    @classmethod
+    def class_method(cls):
+        print(cls.class_variable)
+
+MyClass.class_method()  # Output: Hello
+
+@staticmethod: This decorator is used to define a method that does not operate on instances or the class itself.
+It behaves like a regular function, except it's defined within the class namespace for organizational purposes.
+@staticmethod does not have access to the class or instance, so it cannot modify class-level data or instance data.
+It's often used for utility functions that are related to the class but do not depend on instance or class state.
+
+class MyClass:
+    @staticmethod
+    def static_method():
+        print("This is a static method")
+
+MyClass.static_method()  # Output: This is a static method
+
+34)) Write a function that accepts a variable and keyword parameters which accepts empty list.
+def myfunc(val,mylist=[]):
+    mylist.append()
+    return mylist.append(val)
+what will be the output of the following:-
+myfunc(2) # what it will return-&gt; it will return 2, why?
+myfunc(3) # what it will return-&gt; [2,3],why?
+myfunc(4) #what it will return-&gt; [2,3,4],why?
+Why, explain the reason?-&gt; 1] since list is created in the function, it retains it over the period until
+and is not released.
+
+
+
+
