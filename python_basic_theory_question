@@ -399,6 +399,31 @@ myfunc(4) #what it will return-&gt; [2,3,4],why?
 Why, explain the reason?-&gt; 1] since list is created in the function, it retains it over the period until
 and is not released.
 
-
+Qu-35> Balanced parenthesis
+s="[]{}[]()"
+l=[]
+d={"(":")","{":"}","[":"]"}
+open_bracket=["(","{","["]
+def validate_parenthesis(s):
+    for x in s:
+        if x in d:
+            l.append(x)
+        else: 
+            if not l :
+                return False
+            elif (l[-1]=="(" and x!=")") or (l[-1]=="{" and x!="}") or (l[-1]=="[" and x!="]"):
+                return False
+            else:
+                l.pop()
+    if len(l)==0:
+        return True
+    else:
+        return False
+            
+if validate_parenthesis(s):
+    print("Balanced one")
+else:
+    print("Unbalanced")
+    
 
 
