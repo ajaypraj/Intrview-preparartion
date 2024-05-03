@@ -449,5 +449,30 @@ for value in myfunc():
 print(value)
 
 q. 39 : Whether all generators are iterators or whether all iterators are generators? Which is true?
-A] All generators are iterators and not the other way around.
+A] All generators are iterators and not the other way around.generator uses yield keyword and iterator used __iter__ and __next__.
+Its easy to write generator than interator
 
+q.40 :  What does __name==”___main__” represent?
+A] It represent dunder method of namespace wherein its value is equal to main constructor,
+whenever objects are called first.
+
+print('Hello from first_module.py')
+
+if __name__ == '__main__':
+    print('Hello from main method of first_module.py')
+python first_module.py
+Hello from first_module.py
+Hello from main method of first_module.py
+
+# second_module.py
+import first_module
+
+print('Hello from second_module.py')
+
+if __name__ == '__main__':
+    print('Hello from main method of second_module.py')
+
+python second_module.py
+Hello from first_module.py
+Hello from second_module.py
+Hello from main method of second_module.py
