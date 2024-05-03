@@ -1,0 +1,81 @@
+1.  Calculate second highest most salary 
+A] https://onecompiler.com/mysql/42c44vrxy
+CREATE TABLE EMPLOYEE (
+  empId INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  dept TEXT NOT NULL,
+  salary float not null
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES (0001, 'Clark', 'Sales',100);
+INSERT INTO EMPLOYEE VALUES (0002, 'Dave', 'Accounting',300);
+INSERT INTO EMPLOYEE VALUES (0003, 'Ava', 'Sales',400);
+INSERT INTO EMPLOYEE VALUES (0004, 'Clark kumar', 'Sales',400);
+INSERT INTO EMPLOYEE VALUES (0005, 'Dave kumar', 'Accounting',30);
+INSERT INTO EMPLOYEE VALUES (0006, 'Evaa kuamri', 'Sales',300);
+
+-- fetch 
+Select * from EMPLOYEE;
+select max(salary) from EMPLOYEE where salary not in (select max(salary) from EMPLOYEE);
+
+2. Select top 2 salary from employee table
+A: select distinct(salary) from Employee order by salary desc limit 2;
++--------+
+| salary |
++--------+
+|    400 |
+|    300 |
++--------+
+
+3. Select dep wise highest salary
+SELECT 
+        EmpID 
+      , Name, 
+      , Salary
+      , DeptId 
+   FROM Employee 
+   where 
+     (DeptId,Salary) 
+     in 
+     (select DeptId, max(salary) from Employee group by DeptId)
+
+5. row_number() function:
+ROW_NUMBER() assigns a unique sequential integer to each row within the partition of a result set, starting from 1.
+| empid | name        | dept       | salary | row_num |
++-------+-------------+------------+--------+---------+
+|     3 | Ava         | Sales      |    400 |       1 |
+|     4 | Clark kumar | Sales      |    400 |       2 |
+|     2 | Dave        | Accounting |    300 |       3 |
+|     6 | Evaa kuamri | Sales      |    300 |       4 |
+|     1 | Clark       | Sales      |    100 |       5 |
+|     5 | Dave kumar  | Accounting |     30 |       6 |
++-------+-------------+------------+--------+---------+
+
+6. Rank() over-->
+RANK() assigns a unique rank to each distinct row within the partition of a result set. 
+  If multiple rows have the same value, they are assigned the same rank, and the next rank is skipped.
+  -------+-------------+------------+--------+-------------+
+| empid | name        | dept       | salary | rank_number |
++-------+-------------+------------+--------+-------------+
+|     3 | Ava         | Sales      |    400 |           1 |
+|     4 | Clark kumar | Sales      |    400 |           1 |
+|     2 | Dave        | Accounting |    300 |           3 |
+|     6 | Evaa kuamri | Sales      |    300 |           3 |
+|     1 | Clark       | Sales      |    100 |           5 |
+|     5 | Dave kumar  | Accounting |     30 |           6 |
+
+7. dense_rank()-->
+DENSE_RANK() also assigns a unique rank to each distinct row within the partition of a result set, but unlike RANK(), it does not skip ranks when there are ties.
+  
++-------+-------------+------------+--------+----------------+
+| empid | name        | dept       | salary | dense_rank_num |
++-------+-------------+------------+--------+----------------+
+|     3 | Ava         | Sales      |    400 |              1 |
+|     4 | Clark kumar | Sales      |    400 |              1 |
+|     2 | Dave        | Accounting |    300 |              2 |
+|     6 | Evaa kuamri | Sales      |    300 |              2 |
+|     1 | Clark       | Sales      |    100 |              3 |
+|     5 | Dave kumar  | Accounting |     30 |              4 |
++-------+-------------+------------+--------+----------------+
+
