@@ -425,5 +425,20 @@ if validate_parenthesis(s):
 else:
     print("Unbalanced")
     
+Q:36 what is dictionary? Explain the concept. And write a code as below for dictionary?
+mydict={“one”:1,”two”:2,”three”:3,”four”:4}.
+Now sort it based on values in one liner.
+Use sorted.
+A) f = {'Eusebio': 150, 'Cruyff': 504, 'Pele': 150, 'Ronaldo': 132, 'Messi': 125}
+
+print(dict(sorted(f.items(),key=lambda x: x[1], reverse=True)))
+{'Cruyff': 504, 'Eusebio': 150, 'Pele': 150, 'Ronaldo': 132, 'Messi': 125}
+
+print(dict(sorted(f.items(),key=lambda x: x[0], reverse=True)))
+{'Ronaldo': 132, 'Pele': 150, 'Messi': 125, 'Eusebio': 150, 'Cruyff': 504}
+
+q.37 how to use a dictionary comprehension to a code?
+d={k:2*v for k,v in f.items() if v%2==0}
+print(d)
 
 
