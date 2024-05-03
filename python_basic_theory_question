@@ -441,4 +441,13 @@ q.37 how to use a dictionary comprehension to a code?
 d={k:2*v for k,v in f.items() if v%2==0}
 print(d)
 
+q.38:11] Write a code to exhibit how to use generators? Sample code is enough
+def myfunc():
+yield stmt
+
+for value in myfunc():
+print(value)
+
+q. 39 : Whether all generators are iterators or whether all iterators are generators? Which is true?
+A] All generators are iterators and not the other way around.
 
