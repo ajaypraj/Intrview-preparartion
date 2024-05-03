@@ -79,3 +79,16 @@ DENSE_RANK() also assigns a unique rank to each distinct row within the partitio
 |     5 | Dave kumar  | Accounting |     30 |              4 |
 +-------+-------------+------------+--------+----------------+
 
+8. Top 2 Salary Grouped By Department
+select *
+from (select *,dense_rank() over(PARTITION BY dept order by salary desc) as rn from EMPLOYEE) t
+where  t.rn <=2;
++-------+-------------+------------+--------+----+
+| empId | name        | dept       | salary | rn |
++-------+-------------+------------+--------+----+
+|     2 | Dave        | Accounting |    300 |  1 |
+|     5 | Dave kumar  | Accounting |     30 |  2 |
+|     3 | Ava         | Sales      |    400 |  1 |
+|     4 | Clark kumar | Sales      |    400 |  1 |
+|     6 | Evaa kuamri | Sales      |    300 |  2 |
++-------+-------------+------------+--------+----+
