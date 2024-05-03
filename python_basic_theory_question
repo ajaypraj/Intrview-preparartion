@@ -476,3 +476,15 @@ python second_module.py
 Hello from first_module.py
 Hello from second_module.py
 Hello from main method of second_module.py
+
+q.41 Write a code to represent a generator with next()?
+def gen():
+    for i in range(3):
+        yield i*i
+ my_gen = gen()
+>>> next(my_gen)
+0
+>>> next(my_gen)
+1
+>>> next(my_gen)
+4
