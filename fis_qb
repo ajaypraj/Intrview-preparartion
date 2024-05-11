@@ -1,0 +1,18 @@
+1. How to run python code without using python abc.py?
+A. #!/usr/local/bin/python in your script and type abc.py it will be executed.
+2. If python is fully OOPs or functional ? how print works without OOPs object?
+3. How path resolution works in python.
+4. How you reverse a string in python.Write it without using inbuilt.
+5. How l[::-1] works ?
+6. What are python modules you have used?
+7. DO you write sql and stored procedure?
+8. Which python library is used to connect the db?
+9. Difference between copy and deep copy?
+10. What is immutable object.
+11. Why new object is assigned with new id?
+12. What is difference in python package and module.
+13. How module and apckage is different .
+14. What is .pyc file . when it is generated.
+15 Which of the other language you are efficinet
+16. Which of the tools and framework you have worked.
+17. How much you rate yourself?
