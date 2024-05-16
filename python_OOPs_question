@@ -331,6 +331,72 @@ nw=Network("x",1)
 print(nw.odata_id)
 print(nw)
 
+13. What is abstract class and abstarct method in python?
+from abc import ABC, abstractmethod
+
+
+class Polygon(ABC):
+
+    @abstractmethod
+    def noofsides(self):
+        pass
+
+
+class Triangle(Polygon):
+
+    # overriding abstract method
+    def noofsides(self):
+        print("I have 3 sides")
+
+
+class Pentagon(Polygon):
+
+    # overriding abstract method
+    def noofsides(self):
+        print("I have 5 sides")
+
+
+class Hexagon(Polygon):
+
+    # overriding abstract method
+    def noofsides(self):
+        print("I have 6 sides")
+
+
+class Quadrilateral(Polygon):
+
+    # overriding abstract method
+    def noofsides(self):
+        print("I have 4 sides")
+
+
+# Driver code
+R = Triangle()
+R.noofsides()
+
+K = Quadrilateral()
+K.noofsides()
+
+R = Pentagon()
+R.noofsides()
+
+K = Hexagon()
+K.noofsides()
+
+====
+class BackupInterface(metaclass=abc.ABCMeta):
+    @classmethod
+    def __subclasshook__(cls, subclass):
+        return (hasattr(subclass, 'list_backups') and
+                callable(subclass.list_backups) and
+                hasattr(subclass, 'get_backup_from_repo') and
+                callable(subclass.get_backup_from_repo) and
+                hasattr(subclass, 'copy_backup_file_to_repo') and
+                callable(subclass.copy_backup_file_to_repo) and
+                hasattr(subclass, 'delete') and
+                callable(subclass.delete) and
+                NotImplemented)
+
 
 
 
