@@ -277,7 +277,59 @@ If only one argument is passed, it returns that argument. If two arguments are p
 it returns the sum of the two arguments. This is a way to achieve method overloading-like behavior in Python, 
 although it's not exactly the same as method overloading in languages like Java or C++.
 
+12. Explain inheritance, super and __str__ using one program.
+class MsmObject(object):
+    """ Class that SmartFabric objects with odata paths inherit from
 
+    All classes mirroring SmartFabric objects inherit this class
+    """
+
+    def __init__(self, odata_id=None, odata_type=None, *args, **kwargs):
+        self.odata_id = odata_id
+        self.odata_type = odata_type
+        
+class Network(MsmObject):
+    """ Class that mirrors SmartFabric network profile.
+
+    Network Profile Object
+    Used for adding vlans to Server Profile Interfaces
+    Takes a range for Vlans (VlanMinimum - VlanMaximum)
+    """
+
+    def __init__(self, odata_id=None, Id=None, VlanMaximum=None,
+                 VlanMinimum=None, Name=None, Description=None,
+                 Type=None, CreatedBy=None, CreationTime=None,
+                 UpdatedBy=None, UpdatedTime=None, InternalRefNWUUId=None,
+                 *args, **kwargs):
+        """
+        :param: odata_id: unique URL associated with this object
+        :param: NetworkId: unique ID for this object
+        :param: VlanMaximum: vlan range maximum value
+        :param: VlanMinimum: vlan range minimum value
+        :param: QosPriority:
+        :param: NetworkType:
+        :param: NetworkName: name assigned to the network profile
+        :param: Description: String describing the network profile
+        """
+        super(Network, self).__init__(odata_id)
+        self.Id = Id
+        self.VlanMaximum = VlanMaximum
+        self.VlanMinimum = VlanMinimum
+        self.Name = Name
+        self.Description = Description
+        self.Type = Type
+        self.CreatedBy = CreatedBy
+        self.CreationTime = CreationTime
+        self.UpdatedBy = UpdatedBy
+        self.UpdatedTime = UpdatedTime
+        self.InternalRefNWUUId = InternalRefNWUUId
+        
+    def __str__(self):
+        return str(self.Id)
+        
+nw=Network("x",1)
+print(nw.odata_id)
+print(nw)
 
 
 
