@@ -1,4 +1,46 @@
 def decor1(func):
+   
+    def wrapper():
+        """This is wrapper written"""
+        x=func().upper()
+        return x
+    return wrapper
+
+    
+
+@decor1
+def printfb():
+    """ This is printfb docs"""
+    return "Fibonacci"
+    
+print(printfb())  #FIBONACCI
+print(printfb.__name__) # wrapper
+print(printfb.__doc__)   # This is wrapper written
+
+# Ideally it should show printfb as name and printfb 's documentation this can be achived in below ways.
+# Write Python 3 code in this online editor and run it.
+def decor1(func):
+   
+    def wrapper():
+        """This is wrapper written"""
+        x=func().upper()
+        wrapper.__doc__=func.__doc__
+        wrapper.__name__=func.__name__
+        return x
+    return wrapper
+
+
+# for same thing there is inbuild @wraps decorator from functools
+from  functools import wraps
+def decor1(func):
+    @wraps(func)
+    def wrapper():
+        """This is wrapper written"""
+        x=func().upper()
+        return x
+    return wrapper
+#=========
+def decor1(func):
     def wrapper():
         x='<i>'+func()+'</i>'
         return x
