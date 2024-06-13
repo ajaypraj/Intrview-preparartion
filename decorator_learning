@@ -1,0 +1,18 @@
+def decor1(func):
+    def wrapper():
+        x='<i>'+func()+'</i>'
+        return x
+    return wrapper
+
+def decor2(func):
+    def wrapper():
+        x='<b>'+func()+'</b>'
+        return x
+    return wrapper
+    
+@decor2
+@decor1
+def printfb():
+    return "Fibonacci"
+    
+print(printfb())  # <b><i>Fibonacci</i></b>
