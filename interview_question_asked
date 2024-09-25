@@ -1,3 +1,21 @@
+company name : Bleinheim Chalcot
+duration : 1 hr
+Round : L1
+Ecomplexity : General Round
+
+1. Profile
+2. Explain best practices if you are using Python
+3. Explain design pattern
+4. How connection string can be used among many
+5. How you optimise application
+6. How you use design pattern , which design pattern is suitable for particualr case
+7. Explain HLD and LLD , and how they are used in development basically hld and lld perp
+8. Explain one amazing python library(pydantic)
+9. Explain aws and what are vaious services available in aws(Learn AWS and securtiy)
+10. Before giving any intervoew learn about company and in which sector they work.List 10 projects and do study.
+11. How you can secure your application
+12. List best tools for code Sonar queue 
+
 company name : Siemens
 duration : 50 minutes
 Complexity : medium
