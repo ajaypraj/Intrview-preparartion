@@ -15,6 +15,37 @@ be present within its set, here we have list which is mutable, hence possible to
 5] Write a decorator which doesn’t affect the return function of parent module.
 A] eg:- mention/write code with @classmethod or @staticmethod since those doesn’t affect the
 return type of a method.
+==========================
+def decor(f):
+    def inner():
+        print("Decorator is called")
+        result = f()
+        return result
+    return inner
+@decor
+def f1():
+    return 3
+print(f1())
+print(type(f1()))
+output: 
+Decorator is called
+3
+Decorator is called
+<class 'int'>
+===================
+# although they use decorator but their return type is not changed
+class Greeting:
+    @staticmethod
+    def greet(name):
+        return f"Hello,{name}"
+        
+class A:
+    @classmethod
+    def greet(cls,name):
+        return f"Hey, {name}"
+print(Greeting.greet('Vijay'))             
+print(A.greet('Ajay'))
+
 6] Write the below code, say what would be the output of the execution?
 ( write a code which takes optional parameter), then questions followed over it.
 i) Write a function that accepts a variable and keyword parameters which accepts empty list.
